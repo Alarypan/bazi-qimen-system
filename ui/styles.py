@@ -21,10 +21,26 @@ def inject_styles():
         color: #f5f0e8 !important;
     }
     /* 输入控件文字保持深色 */
-    .stApp input, .stApp textarea, .stApp select,
+    .stApp input, .stApp textarea,
     .stApp [data-baseweb="input"] input,
-    .stApp [data-baseweb="textarea"] textarea,
-    .stApp [data-baseweb="select"] div {
+    .stApp [data-baseweb="textarea"] textarea {
+        color: #1a1a2e !important;
+    }
+    /* 选择框（selectbox/下拉框）文字用浅色 */
+    .stApp select,
+    .stApp [data-baseweb="select"] div,
+    .stApp [data-baseweb="select"] span,
+    .stApp [data-baseweb="select"] [data-testid="stMarkdownContainer"],
+    .stApp .stSelectbox div[data-baseweb="select"] > div,
+    .stApp .stSelectbox [role="combobox"],
+    .stApp .stSelectbox [role="option"],
+    .stApp [data-baseweb="select"] [aria-selected] {
+        color: #f0ece4 !important;
+    }
+    /* 下拉菜单弹出层 */
+    [data-baseweb="popover"] li,
+    [data-baseweb="popover"] [role="option"],
+    [data-baseweb="menu"] li {
         color: #1a1a2e !important;
     }
     /* placeholder 文字用中灰色 */
