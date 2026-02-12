@@ -11,7 +11,7 @@ def inject_styles():
         background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0d0d2b 100%);
     }
 
-    /* 全局文字颜色提亮 - 排除输入控件 */
+    /* 全局文字颜色提亮 */
     .stApp, .stApp > div, .stApp .stMarkdown p,
     .stApp .stMarkdown li, .stApp .stMarkdown span,
     .stApp .element-container p {
@@ -20,59 +20,49 @@ def inject_styles():
     .stApp h1, .stApp h2, .stApp h3, .stApp h4 {
         color: #f5f0e8 !important;
     }
-    /* 输入控件文字保持深色 */
-    .stApp input, .stApp textarea,
+    /* 所有输入控件文字统一用浅色（深色背景下可见） */
+    .stApp input, .stApp textarea, .stApp select,
     .stApp [data-baseweb="input"] input,
-    .stApp [data-baseweb="textarea"] textarea {
-        color: #1a1a2e !important;
-    }
-    /* 选择框（selectbox/下拉框）文字用浅色 */
-    .stApp select,
+    .stApp [data-baseweb="textarea"] textarea,
     .stApp [data-baseweb="select"] div,
     .stApp [data-baseweb="select"] span,
-    .stApp [data-baseweb="select"] [data-testid="stMarkdownContainer"],
-    .stApp .stSelectbox div[data-baseweb="select"] > div,
-    .stApp .stSelectbox [role="combobox"],
-    .stApp .stSelectbox [role="option"],
-    .stApp [data-baseweb="select"] [aria-selected] {
+    .stApp .stSelectbox *,
+    .stApp .stNumberInput input,
+    .stApp .stDateInput input,
+    .stApp .stTextInput input,
+    .stApp [data-testid="stDateInput"] input {
         color: #f0ece4 !important;
     }
-    /* 下拉菜单弹出层 */
+    /* placeholder 文字用中灰色 */
+    .stApp input::placeholder, .stApp textarea::placeholder {
+        color: #999 !important;
+    }
+    /* 按钮文字加深加粗 */
+    .stApp button[kind="primary"],
+    .stApp .stButton > button[kind="primary"] {
+        color: #1a1a2e !important;
+        font-weight: bold !important;
+    }
+    /* 下拉菜单弹出层（白底用深色字） */
     [data-baseweb="popover"] li,
     [data-baseweb="popover"] [role="option"],
-    [data-baseweb="menu"] li {
+    [data-baseweb="menu"] li,
+    ul[role="listbox"] li {
         color: #1a1a2e !important;
     }
-    /* 日期选择器 - 年月下拉、日历数字 */
-    [data-baseweb="calendar"] *,
-    [data-baseweb="datepicker"] *,
-    [data-baseweb="calendar"] select,
-    [data-baseweb="calendar"] option,
-    .stDateInput [data-baseweb="calendar"] div,
-    .stDateInput [data-baseweb="popover"] div {
+    /* 日期选择器弹出 */
+    [data-baseweb="calendar"] * {
         color: #f0ece4 !important;
     }
-    /* 日期选择器弹出框背景 */
     .stDateInput [data-baseweb="popover"] > div {
         background: #1a1a3e !important;
     }
-    /* 年份列表弹出层 */
-    [data-baseweb="calendar"] [data-baseweb="menu"] li,
-    [data-baseweb="calendar"] [role="listbox"] li,
     [data-baseweb="calendar"] ul li {
         color: #f0ece4 !important;
         background: #1a1a3e !important;
     }
     [data-baseweb="calendar"] ul li:hover {
         background: #2a2a5c !important;
-    }
-    /* number_input 输入框文字保持深色 */
-    .stNumberInput input {
-        color: #1a1a2e !important;
-    }
-    /* placeholder 文字用中灰色 */
-    .stApp input::placeholder, .stApp textarea::placeholder {
-        color: #888 !important;
     }
 
     /* 标签页样式 */
