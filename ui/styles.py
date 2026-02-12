@@ -43,6 +43,33 @@ def inject_styles():
     [data-baseweb="menu"] li {
         color: #1a1a2e !important;
     }
+    /* 日期选择器 - 年月下拉、日历数字 */
+    [data-baseweb="calendar"] *,
+    [data-baseweb="datepicker"] *,
+    [data-baseweb="calendar"] select,
+    [data-baseweb="calendar"] option,
+    .stDateInput [data-baseweb="calendar"] div,
+    .stDateInput [data-baseweb="popover"] div {
+        color: #f0ece4 !important;
+    }
+    /* 日期选择器弹出框背景 */
+    .stDateInput [data-baseweb="popover"] > div {
+        background: #1a1a3e !important;
+    }
+    /* 年份列表弹出层 */
+    [data-baseweb="calendar"] [data-baseweb="menu"] li,
+    [data-baseweb="calendar"] [role="listbox"] li,
+    [data-baseweb="calendar"] ul li {
+        color: #f0ece4 !important;
+        background: #1a1a3e !important;
+    }
+    [data-baseweb="calendar"] ul li:hover {
+        background: #2a2a5c !important;
+    }
+    /* number_input 输入框文字保持深色 */
+    .stNumberInput input {
+        color: #1a1a2e !important;
+    }
     /* placeholder 文字用中灰色 */
     .stApp input::placeholder, .stApp textarea::placeholder {
         color: #888 !important;
